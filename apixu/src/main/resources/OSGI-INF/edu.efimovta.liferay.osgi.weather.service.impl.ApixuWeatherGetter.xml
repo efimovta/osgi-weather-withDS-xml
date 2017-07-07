@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="edu.efimovta.liferay.osgi.weather.service.impl.ApixuWeatherGetter" immediate="true">
+    <implementation class="edu.efimovta.liferay.osgi.weather.service.impl.ApixuWeatherGetter"/>
+    <service>
+        <provide interface="edu.efimovta.liferay.osgi.weather.service.WeatherGetter"/>
+    </service>
+</component>

@@ -11,7 +11,6 @@ import java.util.List;
 /**
  * Created by eta on 7/5/2017.
  */
-
 public class FileWeatherPrinter implements WeatherPrinter {
     private final String path = "..//..//testFile2.txt";
 
@@ -36,9 +35,10 @@ public class FileWeatherPrinter implements WeatherPrinter {
         } catch (IOException e) {
             throw new WeatherPrinterException(e);
         }
+
+        System.out.println("FILE PRINTED");
     }
 
-    @Override
     public void print(List<Weather> weathers) throws WeatherPrinterException {
             try {
                 FileOutputStream out = new FileOutputStream(path);

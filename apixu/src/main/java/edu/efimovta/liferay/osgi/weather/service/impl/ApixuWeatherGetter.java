@@ -21,7 +21,6 @@ import static org.apache.http.HttpHeaders.USER_AGENT;
 /**
  * Created by eta on 7/5/2017.
  */
-
 public class ApixuWeatherGetter implements WeatherGetter {
     private final String source = "apixu.com - json";
     private final String sourceUrl = "http://api.apixu.com/v1/forecast.json";
@@ -70,6 +69,8 @@ public class ApixuWeatherGetter implements WeatherGetter {
             double mintemp_c = day.getDouble("mintemp_c");
             double maxtemp_c = day.getDouble("maxtemp_c");
 
+
+            System.out.println("WEATHER GETTED");
             return new WeatherImpl(source, city, country, lat, lon, conditionText, avgtemp_c, mintemp_c, maxtemp_c);
 
         } catch (JSONException | IOException e) {

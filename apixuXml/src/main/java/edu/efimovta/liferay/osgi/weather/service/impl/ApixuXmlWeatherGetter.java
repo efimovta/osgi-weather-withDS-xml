@@ -16,7 +16,6 @@ import java.io.IOException;
 /**
  * Created by eta on 7/5/2017.
  */
-
 public class ApixuXmlWeatherGetter implements WeatherGetter {
     private final String source = "apixu.com - xml";
     private final String sourceUrl = "http://api.apixu.com/v1/forecast.xml";
@@ -49,7 +48,7 @@ public class ApixuXmlWeatherGetter implements WeatherGetter {
             double mintemp_c = Double.parseDouble(day.getElementsByTagName("mintemp_c").item(0).getTextContent());
             double maxtemp_c = Double.parseDouble(day.getElementsByTagName("maxtemp_c").item(0).getTextContent());
 
-
+            System.out.println("WEATHER GETTED");
             return new WeatherImpl(source, city, country, lat, lon, conditionText, avgtemp_c, mintemp_c, maxtemp_c);
 
         } catch (ParserConfigurationException | SAXException | IOException e) {

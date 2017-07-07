@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" name="edu.efimovta.liferay.osgi.weather.app.App"
+               immediate="true" activate="start">
+    <implementation class="edu.efimovta.liferay.osgi.weather.app.App"/>
+    <reference name="refs.WeatherGetter" cardinality="1..n" policy="dynamic"
+               interface="edu.efimovta.liferay.osgi.weather.service.WeatherGetter" bind="bindWeatherGetter"
+               unbind="unbindWeatherGetter"/>
+    <reference name="refs.WeatherPrinter" cardinality="1..1" policy="dynamic"
+               interface="edu.efimovta.liferay.osgi.weather.printer.service.WeatherPrinter" bind="bindWeatherPrinter"
+               unbind="unbindWeatherPrinter"/>
+</scr:component>
